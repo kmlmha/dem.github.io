@@ -1,145 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>New Year Crossword</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christmas Crossword</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #e3f2fd, #f5f5f5);
+      font-family: 'Arial', sans-serif;
+      background-color: #e6f7ff;
       text-align: center;
       padding: 20px;
-      color: #1a237e;
+      color: #222;
     }
     h1 {
-      color: #c62828;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      color: #d40000;
       margin-bottom: 20px;
     }
-    .crossword-container {
-      display: inline-block;
-      margin: 20px auto;
-      background: white;
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
     }
-    .crossword {
-      border-collapse: collapse;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(10, 32px);
+      grid-gap: 1px;
+      background-color: #333;
+      padding: 4px;
+      border-radius: 4px;
     }
-    .crossword td {
-      width: 34px;
-      height: 34px;
-      border: 1px solid #283593;
-      text-align: center;
-      vertical-align: middle;
+    .cell {
+      width: 32px;
+      height: 32px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: bold;
-      font-size: 14px;
-      background-color: #fff;
-      color: #0d47a1;
+      position: relative;
+      font-size: 16px;
+      box-sizing: border-box;
     }
     .black {
-      background-color: #1a237e;
+      background-color: #000;
     }
-    .legend {
-      max-width: 650px;
-      margin: 25px auto;
-      padding: 16px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    .number {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      font-size: 10px;
+      color: #000;
+      font-weight: bold;
+    }
+    .clues {
       text-align: left;
+      max-width: 280px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    .legend h2 {
-      color: #0d47a1;
+    .clues h2 {
       margin-top: 0;
+      color: #d40000;
     }
-    .legend ul {
-      padding-left: 20px;
-    }
-    .legend li {
-      margin-bottom: 6px;
-    }
-    .note {
-      font-style: italic;
-      color: #555;
-      margin-top: 15px;
-      font-size: 0.9em;
+    .clue {
+      margin: 6px 0;
     }
   </style>
 </head>
 <body>
-  <h1>🎄 New Year Crossword 🎄</h1>
+  <h1>🎄 Christmas Crossword Puzzle 🎄</h1>
+  <div class="container">
+    <div class="grid" id="crossword"></div>
+    <div class="clues">
+      <h2>Clues</h2>
+      <div class="clue"><strong>Across:</strong></div>
+      <div class="clue">1. White flakes that fall in winter</div>
+      <div class="clue">3. Decorated evergreen plant during holidays</div>
+      <div class="clue">5. Present you receive on Christmas morning</div>
 
-  <!-- Crossword grid: 13x13 -->
-  <div class="crossword-container">
-    <table class="crossword">
-      <tr>
-        <td class="black"></td><td>C</td><td>H</td><td>R</td><td>I</td><td>S</td><td>T</td><td>M</td><td>A</td><td>S</td><td>T</td><td>R</td><td>E</td>
-      </tr>
-      <tr>
-        <td>S</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>E</td>
-      </tr>
-      <tr>
-        <td>N</td><td class="black"></td><td class="black"></td><td class="black"></td><td>O</td><td>L</td><td>I</td><td>V</td><td>I</td><td>E</td><td>R</td><td>S</td><td>A</td>
-      </tr>
-      <tr>
-        <td>O</td><td class="black"></td><td>F</td><td>R</td><td>O</td><td>S</td><td>T</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>L</td>
-      </tr>
-      <tr>
-        <td>W</td><td class="black"></td><td>L</td><td></td><td></td><td></td><td></td><td class="black"></td><td>C</td><td>H</td><td>A</td><td>M</td><td>A</td>
-      </tr>
-      <tr>
-        <td class="black"></td><td>S</td><td>A</td><td>N</td><td>D</td><td>M</td><td>A</td><td>N</td><td></td><td></td><td></td><td></td><td>G</td>
-      </tr>
-      <tr>
-        <td class="black"></td><td>N</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>N</td>
-      </tr>
-      <tr>
-        <td class="black"></td><td>E</td><td class="black"></td><td class="black"></td><td>S</td><td>T</td><td>A</td><td>R</td><td class="black"></td><td>O</td><td>R</td><td>N</td><td>E</td>
-      </tr>
-      <tr>
-        <td class="black"></td><td>G</td><td class="black"></td><td class="black"></td><td>N</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>M</td>
-      </tr>
-      <tr>
-        <td class="black"></td><td>U</td><td class="black"></td><td>S</td><td>O</td><td>W</td><td>F</td><td>L</td><td>A</td><td>K</td><td>E</td><td class="black"></td><td>E</td>
-      </tr>
-      <tr>
-        <td class="black"></td><td>R</td><td class="black"></td><td>N</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="black"></td><td>N</td>
-      </tr>
-      <tr>
-        <td class="black"></td><td>O</td><td class="black"></td><td>E</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>T</td>
-      </tr>
-      <tr>
-        <td class="black"></td><td>C</td><td class="black"></td><td>K</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td>
-      </tr>
-    </table>
+      <div class="clue"><strong>Down:</strong></div>
+      <div class="clue">2. Jolly man in red suit who delivers gifts</div>
+      <div class="clue">4. Sound of bells in "___ Bells"</div>
+    </div>
   </div>
 
-  <div class="legend">
-    <h2>Clues</h2>
-    <ul>
-      <li><strong>Across:</strong>
-        <ol>
-          <li>CHRISTMASTREE — festive evergreen decorated with lights and ornaments</li>
-          <li>OLIVIERSALAD — traditional Russian New Year dish</li>
-          <li>FROST — icy crystals that form on cold surfaces</li>
-          <li>SNOWMAN — figure built from snow, often with a carrot nose</li>
-          <li>STAR — shining celestial body; also tops the Christmas tree</li>
-          <li>ORNAMENT — decorative item hung on a Christmas tree</li>
-          <li>SNOWFLAKE — unique ice crystal that falls from the sky</li>
-        </ol>
-      </li>
-      <li><strong>Down:</strong>
-        <ol>
-          <li>SNOW — white frozen precipitation</li>
-          <li>CHAMPAGNE — sparkling wine often popped at midnight</li>
-          <li>SNEGUROCHKA — the Snow Maiden, granddaughter of Ded Moroz</li>
-        </ol>
-      </li>
-    </ul>
-    <p class="note">Note: Multi-word answers are written without spaces (e.g., "CHRISTMASTREE").</p>
-  </div>
+  <script>
+    // 10x10 grid: '.' = black cell, letters = filled answer (for demo)
+    const gridData = [
+      //0   1    2    3    4    5    6    7    8    9
+      ['1','S', 'N', 'O', 'W', '.', '.', '.', '.', '.'], // 1. SNOW (Across)
+      ['2','A', '.', '.', '.', '.', '.', '.', '.', '.'], // 2. SANTA (Down starts here)
+      ['N','N', '.', '.', '.', '.', '.', '.', '.', '.'],
+      ['T','T', '3','T', 'R', 'E', 'E', '.', '.', '.'], // 3. TREE (Across)
+      ['A','A', '.', '4','G', '.', '.', '.', '.', '.'], // 4. JINGLE (Down starts at 3-3 → 9-3)
+      ['.', '5','G', 'I', 'I', '.', '.', '.', '.', '.'], // 5. GIFT (Across)
+      ['.', '.', 'F', 'N', 'F', '.', '.', '.', '.', '.'],
+      ['.', '.', 'T', 'G', 'T', '.', '.', '.', '.', '.'],
+      ['.', '.', '.', 'L', '.', '.', '.', '.', '.', '.'],
+      ['.', '.', '.', 'E', '.', '.', '.', '.', '.', '.']
+    ];
+
+    // Number positions: "row-col" → clue number
+    const clueNumbers = {
+      '0-0': 1,
+      '0-1': 0, // part of word, no number
+      '1-0': 2,
+      '3-2': 3,
+      '4-3': 4,
+      '5-1': 5
+    };
+
+    const gridEl = document.getElementById('crossword');
+
+    for (let row = 0; row < 10; row++) {
+      for (let col = 0; col < 10; col++) {
+        const cell = document.createElement('div');
+        cell.className = 'cell';
+        const val = gridData[row][col];
+
+        if (val === '.') {
+          cell.classList.add('black');
+        } else {
+          // Show letter
+          if (/[A-Z]/.test(val)) {
+            cell.textContent = val;
+          }
+          // Add number if it's a clue start
+          const key = `${row}-${col}`;
+          if (clueNumbers[key]) {
+            const numSpan = document.createElement('span');
+            numSpan.className = 'number';
+            numSpan.textContent = clueNumbers[key];
+            cell.appendChild(numSpan);
+          }
+        }
+        gridEl.appendChild(cell);
+      }
+    }
+  </script>
 </body>
 </html>
