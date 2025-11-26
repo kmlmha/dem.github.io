@@ -6,141 +6,124 @@
   <title>Christmas Crossword</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #e6f7ff;
-      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #e0f7fa, #ffffff);
       padding: 20px;
-      color: #222;
+      color: #2c3e50;
+      text-align: center;
     }
     h1 {
-      color: #d40000;
+      color: #c0392b;
       margin-bottom: 20px;
-    }
-    .container {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      margin-top: 20px;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(10, 32px);
-      grid-gap: 1px;
+      grid-template-columns: repeat(6, 40px);
+      grid-template-rows: repeat(6, 40px);
+      gap: 2px;
+      margin: 20px auto;
+      width: fit-content;
       background-color: #333;
       padding: 4px;
-      border-radius: 4px;
+      border-radius: 6px;
     }
     .cell {
-      width: 32px;
-      height: 32px;
+      width: 40px;
+      height: 40px;
       background-color: white;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
-      position: relative;
-      font-size: 16px;
-      box-sizing: border-box;
+      font-size: 18px;
+      color: #2c3e50;
+      border: 1px solid #ccc;
     }
     .black {
-      background-color: #000;
-    }
-    .number {
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      font-size: 10px;
-      color: #000;
-      font-weight: bold;
+      background-color: #2c3e50;
     }
     .clues {
+      max-width: 500px;
+      margin: 25px auto;
       text-align: left;
-      max-width: 280px;
-      background: #fff;
       padding: 15px;
+      background-color: #ecf0f1;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     .clues h2 {
+      color: #c0392b;
       margin-top: 0;
-      color: #d40000;
     }
     .clue {
       margin: 6px 0;
     }
+    .instructions {
+      margin-top: 30px;
+      padding: 15px;
+      background-color: #d5f5e3;
+      border-left: 4px solid #27ae60;
+      display: inline-block;
+      text-align: left;
+    }
   </style>
 </head>
 <body>
-  <h1>🎄 Christmas Crossword Puzzle 🎄</h1>
-  <div class="container">
-    <div class="grid" id="crossword"></div>
-    <div class="clues">
-      <h2>Clues</h2>
-      <div class="clue"><strong>Across:</strong></div>
-      <div class="clue">1. White flakes that fall in winter</div>
-      <div class="clue">3. Decorated evergreen plant during holidays</div>
-      <div class="clue">5. Present you receive on Christmas morning</div>
+  <h1>🎄 Christmas Crossword 🎁</h1>
 
-      <div class="clue"><strong>Down:</strong></div>
-      <div class="clue">2. Jolly man in red suit who delivers gifts</div>
-      <div class="clue">4. Sound of bells in "___ Bells"</div>
-    </div>
+  <!-- Кроссворд 6x6 -->
+  <div class="grid" id="crossword"></div>
+
+  <div class="clues">
+    <h2>Across:</h2>
+    <div class="clue"><strong>1.</strong> White flakes falling from the sky</div>
+    <div class="clue"><strong>3.</strong> Decorated evergreen plant during holidays</div>
+    <div class="clue"><strong>4.</strong> Presents you receive on Christmas morning</div>
+
+    <h2>Down:</h2>
+    <div class="clue"><strong>1.</strong> Jolly man in red who brings gifts</div>
+    <div class="clue"><strong>2.</strong> Shiny object placed on top of the Christmas tree</div>
+  </div>
+
+  <div class="instructions">
+    <p><strong>How to open this file in Kate (Astra Linux):</strong></p>
+    <p>1. Open terminal<br>
+       2. Run: <code>kate christmas_crossword.html</code><br>
+       (Install Kate with <code>sudo apt install kate</code> if needed)
+    </p>
   </div>
 
   <script>
-    // 10x10 grid: '.' = black cell, letters = filled answer (for demo)
-    const gridData = [
-      //0   1    2    3    4    5    6    7    8    9
-      ['1','S', 'N', 'O', 'W', '.', '.', '.', '.', '.'], // 1. SNOW (Across)
-      ['2','A', '.', '.', '.', '.', '.', '.', '.', '.'], // 2. SANTA (Down starts here)
-      ['N','N', '.', '.', '.', '.', '.', '.', '.', '.'],
-      ['T','T', '3','T', 'R', 'E', 'E', '.', '.', '.'], // 3. TREE (Across)
-      ['A','A', '.', '4','G', '.', '.', '.', '.', '.'], // 4. JINGLE (Down starts at 3-3 → 9-3)
-      ['.', '5','G', 'I', 'I', '.', '.', '.', '.', '.'], // 5. GIFT (Across)
-      ['.', '.', 'F', 'N', 'F', '.', '.', '.', '.', '.'],
-      ['.', '.', 'T', 'G', 'T', '.', '.', '.', '.', '.'],
-      ['.', '.', '.', 'L', '.', '.', '.', '.', '.', '.'],
-      ['.', '.', '.', 'E', '.', '.', '.', '.', '.', '.']
+    // 6x6 grid layout
+    // Words:
+    // SNOW  → row 0, cols 0-3
+    // TREE  → row 2, cols 0-3
+    // GIFT  → row 3, cols 2-5
+    // SANTA → col 0, rows 0-4
+    // STAR  → col 3, rows 0-3
+
+    const grid = [
+      ['S','N','O','W','.','.'],
+      ['A','.','.','T','.','.'],
+      ['N','T','R','E','E','.'],
+      ['T','.','G','A','R','.'],
+      ['A','.','I','R','.','.'],
+      ['.','.','F','T','.','.']
     ];
 
-    // Number positions: "row-col" → clue number
-    const clueNumbers = {
-      '0-0': 1,
-      '0-1': 0, // part of word, no number
-      '1-0': 2,
-      '3-2': 3,
-      '4-3': 4,
-      '5-1': 5
-    };
+    const crosswordContainer = document.getElementById('crossword');
 
-    const gridEl = document.getElementById('crossword');
-
-    for (let row = 0; row < 10; row++) {
-      for (let col = 0; col < 10; col++) {
-        const cell = document.createElement('div');
-        cell.className = 'cell';
-        const val = gridData[row][col];
-
-        if (val === '.') {
-          cell.classList.add('black');
+    grid.forEach((row, r) => {
+      row.forEach((cell, c) => {
+        const cellDiv = document.createElement('div');
+        cellDiv.classList.add('cell');
+        if (cell === '.') {
+          cellDiv.classList.add('black');
         } else {
-          // Show letter
-          if (/[A-Z]/.test(val)) {
-            cell.textContent = val;
-          }
-          // Add number if it's a clue start
-          const key = `${row}-${col}`;
-          if (clueNumbers[key]) {
-            const numSpan = document.createElement('span');
-            numSpan.className = 'number';
-            numSpan.textContent = clueNumbers[key];
-            cell.appendChild(numSpan);
-          }
+          cellDiv.textContent = cell;
         }
-        gridEl.appendChild(cell);
-      }
-    }
+        crosswordContainer.appendChild(cellDiv);
+      });
+    });
   </script>
 </body>
 </html>
