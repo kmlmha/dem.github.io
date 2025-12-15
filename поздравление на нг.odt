@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
-
+<head>
+  <meta charset="UTF-8">
+  <title>С Новым Годом</title>
+</head>
 <body>
   <h1>Новогоднее поздравление</h1>
   <p>
-    <a href="/home/user/2025/101C/Шрифт/поздравление на нг.odt" download="поздравение на нг.odt">
+    <a href="/home/user/2025/101C/Шрифт/поздравление на нг.odt" download="/home/user/2025/101C/Шрифт/поздравление на нг.odt">
       Скачать поздравление (.odt)
     </a>
   </p>
 </body>
 </html>
-
