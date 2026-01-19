@@ -1,186 +1,98 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>С Новым Годом! 🎅</title>
+/* === Сброс стилей === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
- <style>
-  @font-face {
-    font-family: 'Pudelinka';
-    src: url('Pudelinka.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+/* === Новогодний фон === */
+body {
+  background: linear-gradient(135deg, #0c3b1a, #6b1e2d, #8b5a00);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+/* === Гирлянда сверху === */
+.garland {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 15;
+}
+
+.bulb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  animation: twinkle 2s infinite alternate;
+}
+
+.bulb:nth-child(1) { background: red; animation-delay: 0s; }
+.bulb:nth-child(2) { background: lime; animation-delay: 0.3s; }
+.bulb:nth-child(3) { background: cyan; animation-delay: 0.6s; }
+.bulb:nth-child(4) { background: yellow; animation-delay: 0.9s; }
+.bulb:nth-child(5) { background: pink; animation-delay: 1.2s; }
+
+@keyframes twinkle {
+  from { opacity: 0.5; box-shadow: 0 0 2px currentColor; }
+  to { opacity: 1; box-shadow: 0 0 12px currentColor; }
+}
+
+/* === Снег === */
+.snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.snowflake {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.85;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
   }
-  body {
-    font-family: 'Pudelinka', cursive;
-  }
-</style>
+}
 
-  <style>
-    /* Сброс стилей */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* === Контент === */
+.content {
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+  z-index: 20;
+}
 
-    body {
-      background: linear-gradient(135deg, #0c3b1a, #1a5c2d);
-      color: #fff;
-      font-family: 'Piedra', cursive;
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-    }
+h1 {
+  font-size: 3.5rem;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.9);
+  margin-bottom: 1.5rem;
+  color: #ffd700;
+}
 
-    /* Снег */
-    .snowflakes {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 10;
-    }
+p {
+  font-size: 1.4rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
 
-    .snowflake {
-      position: absolute;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: fall linear infinite;
-    }
-
-    @keyframes fall {
-      to {
-        transform: translateY(100vh);
-      }
-    }
-
-    /* Контент */
-    .container {
-      text-align: center;
-      padding: 2rem;
-      position: relative;
-      z-index: 20;
-      max-width: 800px;
-      margin: 0 auto;
-      padding-top: 5rem;
-    }
-
-    h1 {
-      font-size: 4.5rem;
-      text-shadow: 0 0 15px rgba(255, 215, 0, 0.8),
-                   0 0 30px rgba(255, 140, 0, 0.6);
-      margin-bottom: 1.5rem;
-      color: #ffd700;
-      letter-spacing: 2px;
-    }
-
-    p {
-      font-size: 1.8rem;
-      margin-bottom: 2rem;
-      color: #f0f0f0;
-      text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-    }
-
-    .tree {
-      font-size: 8rem;
-      margin: 2rem 0;
-      filter: drop-shadow(0 0 10px #0a0);
-    }
-
-    .lights {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 2rem 0;
-    }
-
-    .light {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      animation: blink 1.5s infinite alternate;
-    }
-
-    .light:nth-child(1) { background: red; animation-delay: 0s; }
-    .light:nth-child(2) { background: yellow; animation-delay: 0.2s; }
-    .light:nth-child(3) { background: green; animation-delay: 0.4s; }
-    .light:nth-child(4) { background: blue; animation-delay: 0.6s; }
-    .light:nth-child(5) { background: pink; animation-delay: 0.8s; }
-
-    @keyframes blink {
-      from { opacity: 0.4; }
-      to { opacity: 1; box-shadow: 0 0 10px currentColor; }
-    }
-
-    footer {
-      margin-top: 3rem;
-      font-size: 1.2rem;
-      color: #ccc;
-    }
-
-    /* Адаптивность */
-    @media (max-width: 600px) {
-      h1 { font-size: 2.8rem; }
-      p { font-size: 1.4rem; }
-      .tree { font-size: 5rem; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Снег -->
-  <div class="snowflakes" id="snowflakes"></div>
-
-  <div class="container">
-    <h1>С Новым Годом!</h1>
-    <p>Пусть 2026 год принесёт радость, удачу и тепло ❤️</p>
-
-    <div class="tree">🎄</div>
-
-    <div class="lights">
-      <div class="light"></div>
-      <div class="light"></div>
-      <div class="light"></div>
-      <div class="light"></div>
-      <div class="light"></div>
-    </div>
-
-    <footer>
-      Сделано с любовью • GitHub Pages
-    </footer>
-  </div>
-
-  <script>
-    // Генерация снежинок
-    const snowflakesContainer = document.getElementById('snowflakes');
-    const snowflakeCount = 100;
-
-    for (let i = 0; i < snowflakeCount; i++) {
-      const snowflake = document.createElement('div');
-      snowflake.classList.add('snowflake');
-
-      // Случайный размер
-      const size = Math.random() * 6 + 2; // от 2 до 8px
-      snowflake.style.width = `${size}px`;
-      snowflake.style.height = `${size}px`;
-
-      // Случайная позиция по горизонтали
-      snowflake.style.left = `${Math.random() * 100}vw`;
-
-      // Случайная скорость падения (от 5 до 15 сек)
-      const duration = Math.random() * 10 + 5;
-      snowflake.style.animationDuration = `${duration}s`;
-
-      // Случайная задержка
-      snowflake.style.animationDelay = `${Math.random() * 5}s`;
-
-      snowflakesContainer.appendChild(snowflake);
-    }
-  </script>
-</body>
-</html>
+/* === Адаптивность === */
+@media (max-width: 600px) {
+  h1 { font-size: 2.5rem; }
+  p { font-size: 1.2rem; }
+}
