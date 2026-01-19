@@ -14,9 +14,6 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap; /* рекомендуется для производительности */
-  body {  
-      font-family: 'Pudelinka';  
-  }  
 }
 
 /* === Новогодний фон === */
@@ -26,6 +23,7 @@ body {
   overflow-x: hidden;
   position: relative;
   color: white;
+  font-family: 'Pudelinka';  
   text-align: center;
   padding: 2rem;
 }
