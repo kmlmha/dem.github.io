@@ -108,7 +108,13 @@ p {
   font-weight: normal;
   font-style: normal;
 }
-
+  @font-face {
+  font-family: 'Pudelinka';
+  src: url('Fonts/pudelinka.ttf') format('ttf'),
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* рекомендуется для производительности */
+}
 body {
   font-family: 'Pudelinka', Arial, sans-serif;
   background: #0c3b1a;
@@ -118,11 +124,5 @@ body {
 
 
 
-  @font-face {
-  font-family: 'Pudelinka';
-  src: url('Fonts/pudelinka.ttf') format('ttf'),
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; /* рекомендуется для производительности */
-}
+
 }
