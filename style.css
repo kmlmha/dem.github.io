@@ -115,4 +115,15 @@ body {
   color: white;
   text-align: center;
   padding: 2rem;
+
+
+
+  @font-face {
+  font-family: 'Pudelinka';
+  src: url('fonts/Pudelinka.woff2') format('woff2'),
+       url('fonts/Pudelinka.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* рекомендуется для производительности */
+}
 }
