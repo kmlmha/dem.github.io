@@ -7,12 +7,7 @@
   box-sizing: border-box;
 }
 /* Подключаем кастомный шрифт */
-@font-face {
-  font-family: 'Pudelinka';
-  src: url('fonts/Pudelinka.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+
   @font-face {
   font-family: 'Pudelinka';
   src: url('Fonts/pudelinka.ttf') format('ttf'),
