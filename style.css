@@ -8,7 +8,7 @@
 }
 /* Подключаем кастомный шрифт */
 
-  @font-face {
+@font-face {
   font-family: 'Pudelinka';
   src: url('Fonts/pudelinka.ttf') format('ttf'),
   font-weight: normal;
