@@ -15,7 +15,9 @@
   font-style: normal;
   font-display: swap; /* рекомендуется для производительности */
 }
-
+.m-style {
+    font-family: "Pudelinka";
+}
 /* === Новогодний фон === */
 body {
   background: linear-gradient(135deg, #0c3b1a, #6b1e2d, #8b5a00);
