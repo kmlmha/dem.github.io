@@ -14,7 +14,11 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap; /* рекомендуется для производительности */
+  body {  
+      font-family: 'Pudelinka';  
+  }  
 }
+
 /* === Новогодний фон === */
 body {
   background: linear-gradient(135deg, #0c3b1a, #6b1e2d, #8b5a00);
@@ -22,7 +26,6 @@ body {
   overflow-x: hidden;
   position: relative;
   color: white;
-  font-family: 'Pudelinka';
   text-align: center;
   padding: 2rem;
 }
