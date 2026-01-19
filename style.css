@@ -120,8 +120,7 @@ body {
 
   @font-face {
   font-family: 'Pudelinka';
-  src: url('fonts/Pudelinka.woff2') format('woff2'),
-       url('fonts/Pudelinka.woff') format('woff');
+  src: url('Fonts/pudelinka.ttf') format('ttf'),
   font-weight: normal;
   font-style: normal;
   font-display: swap; /* рекомендуется для производительности */
