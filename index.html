@@ -99,7 +99,10 @@
 
     
   <!-- Скрипт для снега -->
-  <script>
+    
+    <div class="snowflakes" id="snow"></div>
+    
+ <script>
     const snowContainer = document.getElementById('snow');
     for (let i = 0; i < 100; i++) {
       const flake = document.createElement('div');
@@ -119,5 +122,6 @@
       snowContainer.appendChild(flake);
     }
   </script>
+    
 </body>
 </html>
