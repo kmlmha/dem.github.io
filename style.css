@@ -5,39 +5,59 @@
   box-sizing: border-box;
 }
 
+/* === Подключение шрифта Pudelinka (должен быть в папке Fonts/) === */
+@font-face {
+  font-family: 'Pudelinka';
+  src: url('Fonts/pudelinka.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
-/* === Общие стили тела — используем красивый системный или классический шрифт === */
+/* === Красивый переливающийся новогодний фон === */
 body {
-  background: linear-gradient(135deg, #fdf6e3, #f8f0d9);
+  /* Нежный градиент с лёгким мерцанием */
+  background: linear-gradient(135deg, #fff9f0, #f0f4ff, #fdf6e3);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
   min-height: 100vh;
   color: #2c2c2c;
-  /* Красивый, читаемый шрифт для всего, кроме h1 */
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  /* Основной шрифт — читаемый и элегантный */
+  font-family: Georgia, 'Times New Roman', serif;
   line-height: 1.7;
   padding: 2rem;
   position: relative;
 }
 
-/* === Применяем Pudelinka ТОЛЬКО к заголовку "С Новым Годом!" === */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Pudelinka — только для h1 и h2 (заголовок + даты) === */
+h1,
+h2 {
+  font-family: 'Pudelinka', cursive;
+}
+
+/* === Заголовок "С Новым Годом!" === */
 h1 {
-  font-family: 'Pudelinka', fallback; /* fallback на cursive, если шрифт не загрузится */
   font-size: 3.2rem;
-  color: #d4af37;
+  color: #d4af37; /* Золотой */
   text-align: center;
   margin-bottom: 1.8rem;
-  text-shadow: 0 2px 4px rgba(212, 175, 55, 0.2);
+  text-shadow: 0 2px 6px rgba(212, 175, 55, 0.25);
 }
 
-/* Остальные стили остаются без изменений... */
-
-body {
-  background: linear-gradient(135deg, #fdf6e3, #f8f0d9); /* Светлый новогодний фон */
-  min-height: 100vh;
-  color: #2c2c2c; /* Тёмно-серый вместо белого — лучше читается */
-  font-family: 'Pudelinka', sans-serif;
-  line-height: 1.7;
-  padding: 2rem;
-  position: relative;
+/* === Даты (h2) === */
+h2 {
+  font-size: 1.8rem;
+  margin: 1.8rem 0 1rem;
+  color: #5a3e2b;
+  border-bottom: 1px dashed #d4af37;
+  padding-bottom: 0.4rem;
+  text-shadow: 0 1px 2px rgba(212, 175, 55, 0.1);
 }
 
 /* === Гирлянда сверху === */
@@ -70,7 +90,7 @@ body {
   to { opacity: 1; box-shadow: 0 0 15px currentColor; }
 }
 
-/* === Снег === */
+/* === Снег — теперь КРУПНЫЕ снежинки === */
 .snowflakes {
   position: fixed;
   top: 0;
@@ -83,11 +103,16 @@ body {
 
 .snowflake {
   position: absolute;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 50%;
-  opacity: 0.85;
+  opacity: 0.9;
   animation: fall linear infinite;
+  /* Снежинки от 6 до 12 пикселей — заметно крупнее */
+  width: 6px;
+  height: 6px;
 }
+
+/* Индивидуальный размер и скорость для каждой снежинки (в JS) */
 
 @keyframes fall {
   to {
@@ -95,34 +120,20 @@ body {
   }
 }
 
-/* === Контент === */
+/* === Основной контент === */
 .content {
   max-width: 800px;
   margin: 0 auto;
   position: relative;
   z-index: 20;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(2px); /* лёгкое размытие фона (если поддерживается) */
   padding: 2.5rem;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
-h1 {
-  font-size: 3.2rem;
-  color: #d4af37; /* Золотой — праздничный акцент */
-  text-align: center;
-  margin-bottom: 1.8rem;
-  text-shadow: 0 2px 4px rgba(212, 175, 55, 0.2);
-}
-
-h2 {
-  font-size: 1.8rem;
-  margin: 1.8rem 0 1rem;
-  color: #5a3e2b;
-  border-bottom: 1px dashed #d4af37;
-  padding-bottom: 0.4rem;
-}
-
+/* === Текстовые блоки === */
 p, blockquote, ul {
   font-size: 1.35rem;
   margin-bottom: 1.2rem;
@@ -148,10 +159,8 @@ a:hover {
 
 img {
   max-width: 100px;
-  margin: 0.8rem 0;
+  margin: 0.8rem auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* === Адаптивность === */
@@ -162,4 +171,3 @@ img {
   h2 { font-size: 1.5rem; }
   p, blockquote { font-size: 1.2rem; }
 }
-
