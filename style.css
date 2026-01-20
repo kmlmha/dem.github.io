@@ -17,6 +17,18 @@ p {
 
 
 
+body {
+  background-color: #f9f7f0; /* замените на выбранный вами цвет */
+}
+
+
+body {
+  background-color: #fdf6e3;
+  background-image: url('https://example.com/snowflake-pattern.png'); /* прозрачный повторяющийся узор */
+  background-repeat: repeat;
+  background-size: 200px;
+}
+
 /* === Сброс стилей === */
 * {
   margin: 0;
