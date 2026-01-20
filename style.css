@@ -215,7 +215,7 @@ img {
 
 @keyframes fall {
   to {
-    transform: translateY(100%) rotate(360deg);
+    transform: translateY(200Vh) rotate(360deg);
   }
 }
 
