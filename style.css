@@ -80,7 +80,7 @@ h2 {
 .content {
   max-width: 800px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(200, 200, 200, 0.94);
   backdrop-filter: blur(2px);
   padding: 2.4rem;
   border-radius: 16px;
