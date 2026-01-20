@@ -1,5 +1,22 @@
 
 
+body {
+  font-size: 18px; /* или 1.2rem, 1.1em и т.д. */
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.1em;
+}
+
+
+
 /* === Сброс стилей === */
 * {
   margin: 0;
