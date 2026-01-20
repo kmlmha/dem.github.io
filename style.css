@@ -14,18 +14,42 @@
   font-display: swap;
 }
 
-/* === Фон — нежный бежево-золотистый, без анимации (стабильно) === */
+/* === Переливающийся новогодний фон с снежинками === */
 body {
-  background-color: #fdf9f0; /* тёплый кремовый */
-  background-image: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.03) 2px, transparent 3px),
-                    radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.02) 1px, transparent 2px);
-  background-size: 40px 40px;
+  /* Анимированный градиент */
+  background: linear-gradient(-45deg, #fdf6e3, #f8f0d9, #fff9f0, #f0f4ff);
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+
+  /* Наложение снежинок как текстуры */
   min-height: 100vh;
   color: #2c2c2c;
-  font-family: Georgia, serif; /* читаемый классический шрифт */
+  font-family: Georgia, serif;
   line-height: 1.7;
   padding: 2rem;
   position: relative;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Снежинки на фоне (SVG-паттерн) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' font-size='24' fill='rgba(212,175,55,0.04)' text-anchor='middle' dominant-baseline='middle'%3E❄%3C/text%3E%3C/svg%3E");
+  background-size: 120px 120px;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* === Pudelinka только для h1 и h2 === */
@@ -37,10 +61,10 @@ h2 {
 /* === Заголовок "С Новым Годом!" === */
 h1 {
   font-size: 3rem;
-  color: #b8860b; /* тёмное золото */
+  color: #b8860b;
   text-align: center;
   margin-bottom: 1.8rem;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 2px 4px rgba(184, 134, 11, 0.2);
 }
 
 /* === Даты === */
@@ -56,10 +80,11 @@ h2 {
 .content {
   max-width: 800px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.92);
-  padding: 2.2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(2px);
+  padding: 2.4rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   position: relative;
   z-index: 10;
 }
@@ -93,34 +118,42 @@ img {
   margin: 0.8rem auto;
 }
 
-/* === Гирлянда (оставляем — она лёгкая и работает везде) === */
+/* === Улучшенная гирлянда === */
 .garland {
   position: fixed;
-  top: 15px;
+  top: 10px;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 24px;
   z-index: 15;
-}
-.bulb {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  animation: twinkle 2s infinite alternate;
-}
-.bulb:nth-child(1) { background: #ff4d4d; }
-.bulb:nth-child(2) { background: #4dff88; }
-.bulb:nth-child(3) { background: #4ddfff; }
-.bulb:nth-child(4) { background: #ffff4d; }
-.bulb:nth-child(5) { background: #ff80ff; }
-@keyframes twinkle {
-  from { opacity: 0.6; box-shadow: 0 0 3px currentColor; }
-  to { opacity: 1; box-shadow: 0 0 10px currentColor; }
+  /* "Шнур" гирлянды */
+  border-bottom: 2px solid #d4af37;
+  padding-bottom: 12px;
 }
 
-/* === Снег — упрощённый, но видимый === */
+.bulb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  animation: twinkle 3s infinite alternate;
+  box-shadow: 0 0 6px currentColor;
+}
+
+/* Разные цвета и задержки для живого эффекта */
+.bulb:nth-child(1) { background: #ff4d4d; animation-delay: 0s; }
+.bulb:nth-child(2) { background: #4dff88; animation-delay: 0.5s; }
+.bulb:nth-child(3) { background: #4ddfff; animation-delay: 1s; }
+.bulb:nth-child(4) { background: #ffff4d; animation-delay: 1.5s; }
+.bulb:nth-child(5) { background: #ff80ff; animation-delay: 2s; }
+
+@keyframes twinkle {
+  0% { opacity: 0.5; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 14px currentColor; }
+}
+
+/* === Падающий снег (оставляем ваш, но убедимся, что z-index ниже контента) === */
 .snowflakes {
   position: fixed;
   top: 0;
@@ -146,8 +179,16 @@ img {
 /* === Адаптивность === */
 @media (max-width: 600px) {
   body { padding: 1rem; }
-  .content { padding: 1.6rem; }
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.4rem; }
+  .content { padding: 1.8rem; }
+  h1 { font-size: 2.3rem; }
+  h2 { font-size: 1.45rem; }
   p, blockquote { font-size: 1.15rem; }
+  .garland {
+    gap: 16px;
+    top: 8px;
+  }
+  .bulb {
+    width: 12px;
+    height: 12px;
+  }
 }
