@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* === Кастомный шрифт === */
+/* === Подключение кастомного шрифта === */
 @font-face {
   font-family: 'Pudelinka';
   src: url('Fonts/pudelinka.ttf') format('truetype');
@@ -13,6 +13,30 @@
   font-style: normal;
   font-display: swap;
 }
+
+/* === Общие стили тела — используем красивый системный или классический шрифт === */
+body {
+  background: linear-gradient(135deg, #fdf6e3, #f8f0d9);
+  min-height: 100vh;
+  color: #2c2c2c;
+  /* Красивый, читаемый шрифт для всего, кроме h1 */
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.7;
+  padding: 2rem;
+  position: relative;
+}
+
+/* === Применяем Pudelinka ТОЛЬКО к заголовку "С Новым Годом!" === */
+h1 {
+  font-family: 'Pudelinka', cursive; /* fallback на cursive, если шрифт не загрузится */
+  font-size: 3.2rem;
+  color: #d4af37;
+  text-align: center;
+  margin-bottom: 1.8rem;
+  text-shadow: 0 2px 4px rgba(212, 175, 55, 0.2);
+}
+
+/* Остальные стили остаются без изменений... */
 
 body {
   background: linear-gradient(135deg, #fdf6e3, #f8f0d9); /* Светлый новогодний фон */
