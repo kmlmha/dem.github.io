@@ -20,7 +20,7 @@ body {
 
 /* === Применяем Pudelinka ТОЛЬКО к заголовку "С Новым Годом!" === */
 h1 {
-  font-family: 'Pudelinka', cursive; /* fallback на cursive, если шрифт не загрузится */
+  font-family: 'Pudelinka', fallback; /* fallback на cursive, если шрифт не загрузится */
   font-size: 3.2rem;
   color: #d4af37;
   text-align: center;
