@@ -202,14 +202,14 @@ img {
 }
 
 /* Генерируем несколько снежинок с разными параметрами */
-.snowflake:nth-child(1) { left: 5%; width: 6px; height: 6px; animation-duration: 8s; animation-delay: 0s; }
+.snowflake:nth-child(1) { left: 5%; width: 6px; height: 6px; animation-duration: 18s; animation-delay: 0s; }
 .snowflake:nth-child(2) { left: 15%; width: 14px; height: 14px; animation-duration: 12s; animation-delay: 1s; }
-.snowflake:nth-child(3) { left: 25%; width: 5px; height: 5px; animation-duration: 10s; animation-delay: 2s; }
+.snowflake:nth-child(3) { left: 25%; width: 5px; height: 5px; animation-duration: 20s; animation-delay: 2s; }
 .snowflake:nth-child(4) { left: 35%; width: 3px; height: 3px; animation-duration: 14s; animation-delay: 0.5s; }
 .snowflake:nth-child(5) { left: 45%; width: 27px; height: 27px; animation-duration: 9s; animation-delay: 1.5s; }
-.snowflake:nth-child(6) { left: 55%; width: 4px; height: 4px; animation-duration: 11s; animation-delay: 2.5s; }
+.snowflake:nth-child(6) { left: 55%; width: 4px; height: 4px; animation-duration: 31s; animation-delay: 2.5s; }
 .snowflake:nth-child(7) { left: 65%; width: 5px; height: 5px; animation-duration: 13s; animation-delay: 0.8s; }
-.snowflake:nth-child(8) { left: 75%; width: 16px; height: 16px; animation-duration: 10s; animation-delay: 3s; }
+.snowflake:nth-child(8) { left: 75%; width: 16px; height: 16px; animation-duration: 20s; animation-delay: 3s; }
 .snowflake:nth-child(9) { left: 85%; width: 3px; height: 3px; animation-duration: 12s; animation-delay: 1.2s; }
 .snowflake:nth-child(10) { left: 95%; width: 5px; height: 5px; animation-duration: 9s; animation-delay: 2.2s; }
 
