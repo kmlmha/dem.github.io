@@ -50,7 +50,7 @@ body::before {
   height: 100%;
   background-image:
     /* Снежинки (большие и маленькие) */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 800'%3E%3Ctext x='30' y='40' font-size='58' fill='rgba(255,255,255,0.12)'%3E❄%3C/text%3E%3Ctext x='120' y='80' font-size='18' fill='rgba(255,255,255,0.08)'%3E❄%3C/text%3E%3Ctext x='60' y='150' font-size='22' fill='rgba(255,255,255,0.1)'%3E❄%3C/text%3E%3Ctext x='170' y='130' font-size='16' fill='rgba(255,255,255,0.07)'%3E❄%3C/text%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 800'%3E%3Ctext x='30' y='80' font-size='58' fill='rgba(255,255,255,0.12)'%3E❄%3C/text%3E%3Ctext x='120' y='80' font-size='18' fill='rgba(255,255,255,0.08)'%3E❄%3C/text%3E%3Ctext x='60' y='150' font-size='22' fill='rgba(255,255,255,0.1)'%3E❄%3C/text%3E%3Ctext x='170' y='130' font-size='26' fill='rgba(255,255,255,0.27)'%3E❄%3C/text%3E%3C/svg%3E"),
     /* Веточки ели (слева и справа) */
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 200'%3E%3Cpath d='M10,30 Q5,20 10,10 Q15,20 20,15 Q15,30 25,25 Q20,40 30,35 Q25,50 35,45' fill='none' stroke='rgba(34,139,34,0.12)' stroke-width='2'/%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 200'%3E%3Cpath d='M90,30 Q95,20 90,10 Q85,20 80,15 Q85,30 75,25 Q80,40 70,35 Q75,50 65,45' fill='none' stroke='rgba(34,139,34,0.12)' stroke-width='2'/%3E%3C/svg%3E"),
