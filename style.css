@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* === Подключение шрифта Pudelinka (должен быть в папке Fonts/) === */
+/* === Подключение шрифта Pudelinka === */
 @font-face {
   font-family: 'Pudelinka';
   src: url('Fonts/pudelinka.ttf') format('truetype');
@@ -14,28 +14,21 @@
   font-display: swap;
 }
 
-/* === Красивый переливающийся новогодний фон === */
+/* === Фон — нежный бежево-золотистый, без анимации (стабильно) === */
 body {
-  /* Нежный градиент с лёгким мерцанием */
-  background: linear-gradient(135deg, #fff9f0, #f0f4ff, #fdf6e3);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  background-color: #fdf9f0; /* тёплый кремовый */
+  background-image: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.03) 2px, transparent 3px),
+                    radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.02) 1px, transparent 2px);
+  background-size: 40px 40px;
   min-height: 100vh;
   color: #2c2c2c;
-  /* Основной шрифт — читаемый и элегантный */
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: Georgia, serif; /* читаемый классический шрифт */
   line-height: 1.7;
   padding: 2rem;
   position: relative;
 }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* === Pudelinka — только для h1 и h2 (заголовок + даты) === */
+/* === Pudelinka только для h1 и h2 === */
 h1,
 h2 {
   font-family: 'Pudelinka', cursive;
@@ -43,24 +36,64 @@ h2 {
 
 /* === Заголовок "С Новым Годом!" === */
 h1 {
-  font-size: 3.2rem;
-  color: #d4af37; /* Золотой */
+  font-size: 3rem;
+  color: #b8860b; /* тёмное золото */
   text-align: center;
   margin-bottom: 1.8rem;
-  text-shadow: 0 2px 6px rgba(212, 175, 55, 0.25);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* === Даты (h2) === */
+/* === Даты === */
 h2 {
-  font-size: 1.8rem;
-  margin: 1.8rem 0 1rem;
+  font-size: 1.7rem;
+  margin: 1.6rem 0 1rem;
   color: #5a3e2b;
   border-bottom: 1px dashed #d4af37;
-  padding-bottom: 0.4rem;
-  text-shadow: 0 1px 2px rgba(212, 175, 55, 0.1);
+  padding-bottom: 0.3rem;
 }
 
-/* === Гирлянда сверху === */
+/* === Основной контент === */
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 2.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  position: relative;
+  z-index: 10;
+}
+
+/* === Текст === */
+p, blockquote {
+  font-size: 1.3rem;
+  margin-bottom: 1.1rem;
+  color: #333;
+}
+
+blockquote {
+  font-style: italic;
+  padding-left: 1rem;
+  border-left: 3px solid #d4af37;
+  margin: 1.2rem 0;
+}
+
+a {
+  color: #b8860b;
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100px;
+  display: block;
+  margin: 0.8rem auto;
+}
+
+/* === Гирлянда (оставляем — она лёгкая и работает везде) === */
 .garland {
   position: fixed;
   top: 15px;
@@ -71,26 +104,23 @@ h2 {
   gap: 20px;
   z-index: 15;
 }
-
 .bulb {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   animation: twinkle 2s infinite alternate;
 }
-
 .bulb:nth-child(1) { background: #ff4d4d; }
 .bulb:nth-child(2) { background: #4dff88; }
 .bulb:nth-child(3) { background: #4ddfff; }
 .bulb:nth-child(4) { background: #ffff4d; }
 .bulb:nth-child(5) { background: #ff80ff; }
-
 @keyframes twinkle {
   from { opacity: 0.6; box-shadow: 0 0 3px currentColor; }
-  to { opacity: 1; box-shadow: 0 0 15px currentColor; }
+  to { opacity: 1; box-shadow: 0 0 10px currentColor; }
 }
 
-/* === Снег — теперь КРУПНЫЕ снежинки === */
+/* === Снег — упрощённый, но видимый === */
 .snowflakes {
   position: fixed;
   top: 0;
@@ -100,74 +130,24 @@ h2 {
   pointer-events: none;
   z-index: 5;
 }
-
 .snowflake {
   position: absolute;
-  background: rgba(255, 255, 255, 0.95);
+  background: white;
   border-radius: 50%;
-  opacity: 0.9;
+  opacity: 0.85;
   animation: fall linear infinite;
-  /* Снежинки от 6 до 12 пикселей — заметно крупнее */
-  width: 6px;
-  height: 6px;
 }
-
-/* Индивидуальный размер и скорость для каждой снежинки (в JS) */
-
 @keyframes fall {
   to {
-    transform: translateY(100vh) rotate(360deg);
+    transform: translateY(100vh);
   }
-}
-
-/* === Основной контент === */
-.content {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 20;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(2px); /* лёгкое размытие фона (если поддерживается) */
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-}
-
-/* === Текстовые блоки === */
-p, blockquote, ul {
-  font-size: 1.35rem;
-  margin-bottom: 1.2rem;
-  color: #333;
-}
-
-blockquote {
-  font-style: italic;
-  padding-left: 1.2rem;
-  border-left: 3px solid #d4af37;
-  margin: 1.4rem 0;
-}
-
-a {
-  color: #b8860b;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-img {
-  max-width: 100px;
-  margin: 0.8rem auto;
-  display: block;
 }
 
 /* === Адаптивность === */
 @media (max-width: 600px) {
   body { padding: 1rem; }
-  .content { padding: 1.8rem; }
-  h1 { font-size: 2.4rem; }
-  h2 { font-size: 1.5rem; }
-  p, blockquote { font-size: 1.2rem; }
+  .content { padding: 1.6rem; }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.4rem; }
+  p, blockquote { font-size: 1.15rem; }
 }
