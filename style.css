@@ -14,16 +14,15 @@
   font-display: swap;
 }
 
-/* === Переливающийся новогодний фон с снежинками === */
+/* === Переливающийся сине-голубой фон с узорами === */
 body {
-  /* Анимированный градиент */
-  background: linear-gradient(-45deg, #fdf6e3, #f8f0d9, #fff9f0, #f0f4ff);
+  /* Анимированный градиент: синий → голубой → лазурный → снова синий */
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1e3c72);
   background-size: 400% 400%;
   animation: gradientShift 20s ease infinite;
 
-  /* Наложение снежинок как текстуры */
   min-height: 100vh;
-  color: #2c2c2c;
+  color: #f0f8ff;
   font-family: Georgia, serif;
   line-height: 1.7;
   padding: 2rem;
@@ -36,7 +35,7 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Снежинки на фоне (SVG-паттерн) */
+/* === Белые узоры на фоне (морозные/кружевные) === */
 body::before {
   content: "";
   position: fixed;
@@ -45,66 +44,67 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: 
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' font-size='24' fill='rgba(212,175,55,0.04)' text-anchor='middle' dominant-baseline='middle'%3E❄%3C/text%3E%3C/svg%3E");
-  background-size: 120px 120px;
-  opacity: 0.6;
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M20,20 Q40,5 60,20 T100,20 M20,60 Q40,45 60,60 T100,60 M20,100 Q40,85 60,100 T100,100 M20,140 Q40,125 60,140 T100,140' stroke='white' stroke-opacity='0.06' fill='none' stroke-width='2'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
+  opacity: 0.9;
 }
 
 /* === Pudelinka только для h1 и h2 === */
 h1,
 h2 {
   font-family: 'Pudelinka', cursive;
+  color: #ffffff;
 }
 
 /* === Заголовок "С Новым Годом!" === */
 h1 {
   font-size: 3rem;
-  color: #b8860b;
   text-align: center;
   margin-bottom: 1.8rem;
-  text-shadow: 0 2px 4px rgba(184, 134, 11, 0.2);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 /* === Даты === */
 h2 {
   font-size: 1.7rem;
   margin: 1.6rem 0 1rem;
-  color: #5a3e2b;
-  border-bottom: 1px dashed #d4af37;
+  border-bottom: 1px dashed #a0d8ef;
   padding-bottom: 0.3rem;
+  color: #cce6ff;
 }
 
 /* === Основной контент === */
 .content {
   max-width: 800px;
   margin: 0 auto;
-  background: rgba(200, 200, 255, 0.94);
-  backdrop-filter: blur(2px);
+  background: rgba(25, 40, 70, 0.85);
+  backdrop-filter: blur(6px);
   padding: 2.4rem;
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 10;
+  color: #f0f8ff;
 }
 
 /* === Текст === */
 p, blockquote {
   font-size: 1.3rem;
   margin-bottom: 1.1rem;
-  color: #333;
+  color: #e6f2ff;
 }
 
 blockquote {
   font-style: italic;
   padding-left: 1rem;
-  border-left: 3px solid #d4af37;
+  border-left: 3px solid #a0d8ef;
   margin: 1.2rem 0;
 }
 
 a {
-  color: #b8860b;
+  color: #a0d8ef;
   text-decoration: none;
   font-weight: bold;
 }
@@ -118,7 +118,7 @@ img {
   margin: 0.8rem auto;
 }
 
-/* === Улучшенная гирлянда === */
+/* === Красивая гирлянда сверху === */
 .garland {
   position: fixed;
   top: 10px;
@@ -129,7 +129,7 @@ img {
   gap: 24px;
   z-index: 15;
   /* "Шнур" гирлянды */
-  border-bottom: 2px solid #d4af37;
+  border-bottom: 2px solid #a0d8ef;
   padding-bottom: 12px;
 }
 
@@ -141,38 +141,53 @@ img {
   box-shadow: 0 0 6px currentColor;
 }
 
-/* Разные цвета и задержки для живого эффекта */
-.bulb:nth-child(1) { background: #ff4d4d; animation-delay: 0s; }
-.bulb:nth-child(2) { background: #4dff88; animation-delay: 0.5s; }
-.bulb:nth-child(3) { background: #4ddfff; animation-delay: 1s; }
-.bulb:nth-child(4) { background: #ffff4d; animation-delay: 1.5s; }
-.bulb:nth-child(5) { background: #ff80ff; animation-delay: 2s; }
+/* Разные цвета и задержки */
+.bulb:nth-child(1) { background: #ff6b6b; animation-delay: 0s; }
+.bulb:nth-child(2) { background: #4ecdc4; animation-delay: 0.5s; }
+.bulb:nth-child(3) { background: #45b7d1; animation-delay: 1s; }
+.bulb:nth-child(4) { background: #f9ca24; animation-delay: 1.5s; }
+.bulb:nth-child(5) { background: #d15285; animation-delay: 2s; }
 
 @keyframes twinkle {
-  0% { opacity: 0.5; transform: scale(0.9); }
+  0% { opacity: 0.6; transform: scale(0.9); }
   100% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 14px currentColor; }
 }
 
-/* === Падающий снег (оставляем ваш, но убедимся, что z-index ниже контента) === */
+/* === Падающие снежинки (CSS-only) === */
 .snowflakes {
   position: fixed;
-  top: 0;
+  top: -10%;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 110%;
   pointer-events: none;
   z-index: 5;
 }
+
 .snowflake {
   position: absolute;
   background: white;
   border-radius: 50%;
   opacity: 0.85;
   animation: fall linear infinite;
+  top: -20px;
 }
+
+/* Генерируем несколько снежинок с разными параметрами */
+.snowflake:nth-child(1) { left: 5%; width: 6px; height: 6px; animation-duration: 8s; animation-delay: 0s; }
+.snowflake:nth-child(2) { left: 15%; width: 4px; height: 4px; animation-duration: 12s; animation-delay: 1s; }
+.snowflake:nth-child(3) { left: 25%; width: 5px; height: 5px; animation-duration: 10s; animation-delay: 2s; }
+.snowflake:nth-child(4) { left: 35%; width: 3px; height: 3px; animation-duration: 14s; animation-delay: 0.5s; }
+.snowflake:nth-child(5) { left: 45%; width: 7px; height: 7px; animation-duration: 9s; animation-delay: 1.5s; }
+.snowflake:nth-child(6) { left: 55%; width: 4px; height: 4px; animation-duration: 11s; animation-delay: 2.5s; }
+.snowflake:nth-child(7) { left: 65%; width: 5px; height: 5px; animation-duration: 13s; animation-delay: 0.8s; }
+.snowflake:nth-child(8) { left: 75%; width: 6px; height: 6px; animation-duration: 10s; animation-delay: 3s; }
+.snowflake:nth-child(9) { left: 85%; width: 3px; height: 3px; animation-duration: 12s; animation-delay: 1.2s; }
+.snowflake:nth-child(10) { left: 95%; width: 5px; height: 5px; animation-duration: 9s; animation-delay: 2.2s; }
+
 @keyframes fall {
   to {
-    transform: translateY(100vh);
+    transform: translateY(105vh) rotate(360deg);
   }
 }
 
