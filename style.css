@@ -92,14 +92,14 @@ body {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 10rem;
   text-shadow: 0 0 10px rgba(255, 215, 0, 0.9);
   margin-bottom: 1.5rem;
   color: #ffd700;
 }
 
 p {
-  font-size: 1.4rem;
+  font-size: 5rem;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
