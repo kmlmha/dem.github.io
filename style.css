@@ -14,11 +14,15 @@
   font-display: swap;
 }
 
-/* === Переливающийся сине-голубой фон === */
+/* === 🎄 НОВОГОДНИЙ ГОЛУБОЙ ГРАДИЕНТ (обновлено) === */
 body {
-  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1e3c72);
+  /* Роскошный переливающийся зимний градиент */
+  background: 
+    radial-gradient(ellipse at top, rgba(224, 247, 255, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(0, 102, 204, 0.3) 0%, transparent 60%),
+    linear-gradient(135deg, #001f3f 0%, #003366 20%, #0066cc 40%, #00aaff 60%, #66d9ff 80%, #cceeff 100%);
   background-size: 400% 400%;
-  animation: gradientShift 20s ease infinite;
+  animation: gradientShift 25s ease infinite;
 
   min-height: 100vh;
   color: #f0f8ff;
@@ -44,16 +48,16 @@ body::before {
   height: 100%;
   background-image:
     /* Статичные снежинки (размеры и прозрачность) */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ctext x='20' y='40' font-size='24' fill='rgba(255,255,255,0.07)'%3E❄%3C/text%3E%3Ctext x='130' y='90' font-size='16' fill='rgba(255,255,255,0.05)'%3E❄%3C/text%3E%3Ctext x='70' y='160' font-size='20' fill='rgba(255,255,255,0.06)'%3E❄%3C/text%3E%3Ctext x='170' y='130' font-size='18' fill='rgba(255,255,255,0.04)'%3E❄%3C/text%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ctext x='20' y='40' font-size='24' fill='rgba(255,255,255,0.12)'%3E❄%3C/text%3E%3Ctext x='130' y='90' font-size='16' fill='rgba(255,255,255,0.1)'%3E❄%3C/text%3E%3Ctext x='70' y='160' font-size='20' fill='rgba(255,255,255,0.11)'%3E❄%3C/text%3E%3Ctext x='170' y='130' font-size='18' fill='rgba(255,255,255,0.09)'%3E❄%3C/text%3E%3C/svg%3E"),
 
     /* Реалистичная ветка ели — слева (повторяется по вертикали) */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 300'%3E%3Cpath d='M30,20 L20,40 L35,50 L25,70 L40,80 L30,100 L45,110 L35,130 L50,140 L40,160 L55,170 L45,190 L60,200 L50,220 L65,230 L55,250 L70,260 L60,280' stroke='rgba(25,100,40,0.12)' stroke-width='3' fill='none'/%3E%3Ccircle cx='20' cy='40' r='2' fill='rgba(25,100,40,0.2)'/%3E%3Ccircle cx='25' cy='70' r='2' fill='rgba(25,100,40,0.2)'/%3E%3Ccircle cx='30' cy='100' r='2' fill='rgba(25,100,40,0.2)'/%3E%3Ccircle cx='35' cy='130' r='2' fill='rgba(25,100,40,0.2)'/%3E%3Ccircle cx='40' cy='160' r='2' fill='rgba(25,100,40,0.2)'/%3E%3Ccircle cx='45' cy='190' r='2' fill='rgba(25,100,40,0.2)'/%3E%3Ccircle cx='50' cy='220' r='2' fill='rgba(25,100,40,0.2)'/%3E%3Ccircle cx='55' cy='250' r='2' fill='rgba(25,100,40,0.2)'/%3E%3Ccircle cx='60' cy='280' r='2' fill='rgba(25,100,40,0.2)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 300'%3E%3Cpath d='M30,20 L20,40 L35,50 L25,70 L40,80 L30,100 L45,110 L35,130 L50,140 L40,160 L55,170 L45,190 L60,200 L50,220 L65,230 L55,250 L70,260 L60,280' stroke='rgba(30,144,255,0.15)' stroke-width='3' fill='none'/%3E%3Ccircle cx='20' cy='40' r='2' fill='rgba(30,144,255,0.25)'/%3E%3Ccircle cx='25' cy='70' r='2' fill='rgba(30,144,255,0.25)'/%3E%3Ccircle cx='30' cy='100' r='2' fill='rgba(30,144,255,0.25)'/%3E%3Ccircle cx='35' cy='130' r='2' fill='rgba(30,144,255,0.25)'/%3E%3Ccircle cx='40' cy='160' r='2' fill='rgba(30,144,255,0.25)'/%3E%3Ccircle cx='45' cy='190' r='2' fill='rgba(30,144,255,0.25)'/%3E%3Ccircle cx='50' cy='220' r='2' fill='rgba(30,144,255,0.25)'/%3E%3Ccircle cx='55' cy='250' r='2' fill='rgba(30,144,255,0.25)'/%3E%3Ccircle cx='60' cy='280' r='2' fill='rgba(30,144,255,0.25)'/%3E%3C/svg%3E"),
 
     /* Реалистичная ветка ели — справа */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 300'%3E%3Cpath d='M90,20 L100,40 L85,50 L95,70 L80,80 L90,100 L75,110 L85,130 L70,140 L80,160 L65,170 L75,190 L60,200 L70,220 L55,230 L65,250 L50,260 L60,280' stroke='rgba(25,100,40,0.12)' stroke-width='3' fill='none'/%3E%3Ccircle cx='100' cy='40' r='2' fill='rgba(25,100,40,0.2)'/%3E%3Ccircle cx='95' cy='70' r='2' fill='rgba(25,100,40,0.2)'/%3E%3Ccircle cx='90' cy='100' r='2' fill='rgba(25,100,40,0.2)'/%3E%3Ccircle cx='85' cy='130' r='2' fill='rgba(25,100,40,0.2)'/%3E%3Ccircle cx='80' cy='160' r='2' fill='rgba(25,100,40,0.2)'/%3E%3Ccircle cx='75' cy='190' r='2' fill='rgba(25,100,40,0.2)'/%3E%3Ccircle cx='70' cy='220' r='2' fill='rgba(25,100,40,0.2)'/%3E%3Ccircle cx='65' cy='250' r='2' fill='rgba(25,100,40,0.2)'/%3E%3Ccircle cx='60' cy='280' r='2' fill='rgba(25,100,40,0.2)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 300'%3E%3Cpath d='M90,20 L100,40 L85,50 L95,70 L80,80 L90,100 L75,110 L85,130 L70,140 L80,160 L65,170 L75,190 L60,200 L70,220 L55,230 L65,250 L50,260 L60,280' stroke='rgba(30,144,255,0.15)' stroke-width='3' fill='none'/%3E%3Ccircle cx='100' cy='40' r='2' fill='rgba(30,144,255,0.25)'/%3E%3Ccircle cx='95' cy='70' r='2' fill='rgba(30,144,255,0.25)'/%3E%3Ccircle cx='90' cy='100' r='2' fill='rgba(30,144,255,0.25)'/%3E%3Ccircle cx='85' cy='130' r='2' fill='rgba(30,144,255,0.25)'/%3E%3Ccircle cx='80' cy='160' r='2' fill='rgba(30,144,255,0.25)'/%3E%3Ccircle cx='75' cy='190' r='2' fill='rgba(30,144,255,0.25)'/%3E%3Ccircle cx='70' cy='220' r='2' fill='rgba(30,144,255,0.25)'/%3E%3Ccircle cx='65' cy='250' r='2' fill='rgba(30,144,255,0.25)'/%3E%3Ccircle cx='60' cy='280' r='2' fill='rgba(30,144,255,0.25)'/%3E%3C/svg%3E"),
 
     /* Сугробы внизу */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Cpath d='M0,50 Q40,35 80,50 T160,50 T240,50 L200,60 L0,60 Z' fill='rgba(255,255,255,0.15)'/%3E%3C/svg%3E");
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Cpath d='M0,50 Q40,35 80,50 T160,50 T240,50 L200,60 L0,60 Z' fill='rgba(255,255,255,0.2)'/%3E%3C/svg%3E");
 
   background-repeat:
     repeat,        /* снежинки */
@@ -77,6 +81,32 @@ body::before {
   z-index: 1;
 }
 
+/* === Мерцающие звёздочки поверх градиента === */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 90px 40px, rgba(255,255,255,1), transparent),
+    radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 230px 80px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 300px 150px, rgba(255,255,255,0.7), transparent);
+  background-size: 400px 400px;
+  animation: twinkle 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 3;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
 /* === Шрифт Pudelinka для заголовков === */
 h1,
 h2 {
@@ -89,7 +119,13 @@ h1 {
   font-size: 3rem;
   text-align: center;
   margin-bottom: 1.8rem;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 2px 6px rgba(0, 30, 60, 0.4), 0 0 15px rgba(100, 200, 255, 0.7);
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 2px 6px rgba(0, 30, 60, 0.4), 0 0 15px rgba(100, 200, 255, 0.7); }
+  to { text-shadow: 0 2px 6px rgba(0, 30, 60, 0.4), 0 0 25px rgba(150, 220, 255, 1); }
 }
 
 /* === Даты === */
@@ -105,14 +141,17 @@ h2 {
 .content {
   max-width: 800px;
   margin: 0 auto;
-  background: rgba(25, 40, 70, 0.85);
-  backdrop-filter: blur(6px);
+  background: rgba(10, 35, 65, 0.9);
+  backdrop-filter: blur(8px);
   padding: 2.4rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  box-shadow: 
+    0 8px 32px rgba(0, 30, 60, 0.4),
+    0 0 0 1px rgba(100, 180, 255, 0.3) inset;
   position: relative;
   z-index: 10;
   color: #f0f8ff;
+  border: 1px solid rgba(100, 180, 255, 0.2);
 }
 
 /* === Текст === */
@@ -134,15 +173,20 @@ a {
   color: #a0d8ef;
   text-decoration: none;
   font-weight: bold;
+  transition: all 0.3s ease;
 }
 a:hover {
+  color: #ffffff;
   text-decoration: underline;
+  text-shadow: 0 0 8px rgba(160, 216, 239, 0.8);
 }
 
 img {
   max-width: 100px;
   display: block;
   margin: 0.8rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 30, 60, 0.3);
 }
 
 /* === Гирлянда сверху === */
@@ -155,7 +199,7 @@ img {
   justify-content: center;
   gap: 24px;
   z-index: 15;
-  border-bottom: 2px solid #a0d8ef;
+  border-bottom: 2px solid rgba(160, 216, 239, 0.6);
   padding-bottom: 12px;
 }
 
@@ -193,9 +237,10 @@ img {
   position: absolute;
   background: white;
   border-radius: 50%;
-  opacity: 0.8;
+  opacity: 0.9;
   animation: fall linear infinite;
   top: -20px;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
 }
 
 .snowflake:nth-child(1) { left: 5%; width: 5px; height: 5px; animation-duration: 15s; animation-delay: 0s; }
