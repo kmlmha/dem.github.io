@@ -4,72 +4,155 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Мой блог</title>
-  <!-- Убедитесь, что файл style.css существует -->
   <link rel="stylesheet" href="style.css?v=2">
+  <style>
+    body {
+      background: linear-gradient(135deg, #87CEEB 0%, #B0E0E6 100%);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+    h1 {
+      color: #1e5a7a;
+      text-align: center;
+      border-bottom: 2px solid #87CEEB;
+      padding-bottom: 15px;
+    }
+    h2 {
+      color: #2c7a9b;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+    p {
+      line-height: 1.6;
+      margin: 8px 0;
+    }
+    a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    blockquote {
+      background: #e6f7ff;
+      border-left: 4px solid #87CEEB;
+      padding: 12px 20px;
+      margin: 15px 0;
+      font-style: italic;
+      color: #555;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      background: white;
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border: 1px solid #b0e0e6;
+    }
+    th {
+      background: #87CEEB;
+      color: white;
+    }
+    tr:hover {
+      background: #f0f9ff;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+    video {
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+    code {
+      background: #e6f7ff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      color: #1e5a7a;
+    }
+    .n-value {
+      background: #f0f9ff;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.85em;
+      word-break: break-all;
+      margin: 10px 0;
+    }
+    .garland, .snowflakes {
+      display: none; /* Скрыто по умолчанию, можно включить в style.css */
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Основной контент -->
   <div class="content">
-    <h1>С Новым Годом! 🎄</h1>
+    <h1>✨ С Новым Годом! 🎄</h1>
 
-    <h2>1 сентября, 2025</h2>
+    <h2>📅 1 сентября, 2025</h2>
     <blockquote>Путешествие в тысячу миль начинается с одного шага (Лао Цзы)</blockquote>
     <p>Оставляю в прошлом скучную неинтересную локальную файловую систему ради Всемирной паутины.</p>
 
-
-    <h2>15 октября, 2025</h2>
+    <h2>📅 15 октября, 2025</h2>
     <p>
       Я сделала Новогодние кроссворды для сайта 
       <a href="https://liliirt.github.io/dem.github.io/" title="Блог моего друга">моего друга</a>.<br>
-      Нажмите, чтобы открыть:
-      <br>
+      Нажмите, чтобы открыть:<br>
       <a href="index.html">Файл проверки работы с кириллицей</a> |
       <a href="krossvordRU.html">Русский кроссворд</a> |
       <a href="krossvordEN.html">Английский кроссворд</a>
     </p>
 
-
-    <h2>3 декабря, 2025</h2>
+    <h2>📅 3 декабря, 2025</h2>
     <p>Нажмите, чтобы скачать или открыть презентацию:<br>
-      <a href="СетьВводный.pptx">Презентация в формате .pptx</a>
+      <a href="СетьВводный.pptx">📊 Презентация в формате .pptx</a>
     </p>
-
-    <img src="Icons/free-icon-new-year-2308484.png" alt="Новогодняя иконка">
-
+    <img src="Icons/free-icon-new-year-2308484.png" alt="🎄 Новогодняя иконка">
     <p>Поздравление с Наступающим 2026 годом читайте <a href="Congratulations2026.html">здесь</a>.</p>
 
-
-    
-    <h2>15 декабря, 2025</h2>
+    <h2>📅 15 декабря, 2025</h2>
     <video controls width="100%" poster="videos/poster.jpg">
       <source src="Video/755f2899-b6ee-4201-aee6-134ae5ebce1c.mp4" type="video/mp4">
     </video>
-   <p>Новогодние колядки! 👉 <a href="kolyadki.html">Посмотреть</a>.</p>
+    <p>🎵 Новогодние колядки! 👉 <a href="kolyadki.html">Посмотреть</a>.</p>
 
-    <h2>12 января, 2026</h2>
-    <p>Домены:<br>
+    <h2>📅 12 января, 2026</h2>
+    <p><strong>Домены:</strong><br>
       <code>github.io</code> → TLD (уровень 1)<br>
       <code>dem.github</code> → SLD (уровень 2)<br>
       <code>kmlmha</code> → поддомен (уровень 3)
     </p>
-
     <p>📬 <a href="mailto:kmlmhaa@gmail.com">Напишите мне</a></p>
 
-    <h2>19 января, 2026</h2>
+    <h2>📅 19 января, 2026</h2>
     <p>
-      1. Ключи шифра:<br>
+      <strong>1. Ключи шифра:</strong><br>
       &nbsp;&nbsp;а. k=17<br>
       &nbsp;&nbsp;б. k=27<br><br>
-      2. Расшифровка:<br>
+      <strong>2. Расшифровка:</strong><br>
       &nbsp;&nbsp;а. ПРИВЕТ (k=5)<br>
       &nbsp;&nbsp;б. ВЕСНА (k=20)<br><br>
-      3. Шифрование фамилии с k=10:<br>
+      <strong>3. Шифрование фамилии с k=10:</strong><br>
       &nbsp;&nbsp;ФКЪКЛЭГПЧФШ (без учёта буквы ё)
     </p>
 
-    <h2>20 января, 2026</h2>
-    <p><strong>Пример генерации RSA-ключей:</strong><br>
+    <h2>📅 20 января, 2026</h2>
+    <p><strong>🔐 Пример генерации RSA-ключей:</strong><br>
       Выбираем простые числа: p=17, q=11<br>
       n = p⋅q = 187<br>
       φ(n) = (p−1)(q−1) = 160<br>
@@ -77,102 +160,63 @@
       d = 107 (так как 3⋅107 ≡ 1 mod 160)<br><br>
       🔓 Открытый ключ: (187, 3)<br>
       🔒 Закрытый ключ: (187, 107)<br><br>
-      Реальное n:<br>
+      <strong>Реальное n:</strong>
+    </p>
     <div class="n-value">
-      535754303593133660474212340960589505932621558523950453370
-      842782057515036320643286980939385628049159274650499064070
-      744410801888848837200048155377195807599218956251040249041
-      9479342240370821263452287329543044329765940525367025078125...
+      5357543035931336604742123409605895059326215585239504533708427820575150363206432869809393856280491592746504990640707444108018888488372000481553771958075992189562510402490419479342240370821263452287329543044329765940525367025078125...
     </div>
 
-    <h2>14 февраля, 2026</h2>
-    <p>Топ-3 предсказаний:<br>
+    <h2>📅 14 февраля, 2026</h2>
+    <p><strong>🎸 Топ-3 предсказаний:</strong><br>
       electric guitar: 99.72%<br>
       acoustic guitar: 0.26%<br>
       violin: 0.01%
     </p>
-    <img src="Icons/i.webp" alt="Предсказание гитары">
+    <img src="Icons/i.webp" alt="🎸 Предсказание гитары">
     
-    <p>Топ-3 предсказаний:<br>
+    <p><strong>🐕 Топ-3 предсказаний:</strong><br>
       Labrador: 96.58%<br>
       Golden Retriever: 1.79%<br>
       Rhodesian Ridgeback: 0.33%
     </p>
-    <img src="Icons/3d9eb7c86ddf1f250ae5119eafa074cc.jpg" alt="Предсказание собаки">
+    <img src="Icons/3d9eb7c86ddf1f250ae5119eafa074cc.jpg" alt="🐕 Предсказание собаки">
 
-    <h2>20 февраля, 2026</h2>
+    <h2>📅 20 февраля, 2026</h2>
     <p>
-      <strong>Вопрос пользователя:</strong> Как оплатить заказ?<br>
-      <strong>Найден FAQ-вопрос:</strong> Через что можно произвести оплату? (sim=0.770)<br>
-      <strong>Ответ бот-FAQ:</strong> Оплата производится через систему быстрых платежей.
-    </p> 
+      <strong>❓ Вопрос пользователя:</strong> Как оплатить заказ?<br>
+      <strong>🔍 Найден FAQ-вопрос:</strong> Через что можно произвести оплату? (sim=0.770)<br>
+      <strong>💬 Ответ бот-FAQ:</strong> Оплата производится через систему быстрых платежей.
+    </p>
 
-     <h2>3 декабря, 2025</h2>
-    
-  <head>
-    <meta charset="UTF-8">
-    <title>Прогноз успеваемости</title>
-</head>
-<body>
-    📊 Результат прогнозирования<br><br>
-    <br>
-    <p><strong>⏱️ Время подготовки:</strong> 5 часов</p>
-    <p><strong>🎯 Прогнозируемый балл:</strong> 76.45</p>
-    <br>
-    <h3>Таблица прогнозов:</h3>
-    <br>
-    <table border="1">
-        <tr>
-            <th>Часы подготовки</th>
-            <th>Прогноз баллов</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>58.98</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>67.71</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>76.45</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>85.18</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>98.28</td>
-        </tr>
+    <h2>📅 Прогноз успеваемости (бонус)</h2>
+    <p><strong>⏱️ Время подготовки:</strong> 5 часов<br>
+       <strong>🎯 Прогнозируемый балл:</strong> 76.45</p>
+    <table>
+      <tr>
+        <th>Часы подготовки</th>
+        <th>Прогноз баллов</th>
+      </tr>
+      <tr><td>1</td><td>58.98</td></tr>
+      <tr><td>3</td><td>67.71</td></tr>
+      <tr><td>5</td><td>76.45</td></tr>
+      <tr><td>7</td><td>85.18</td></tr>
+      <tr><td>10</td><td>98.28</td></tr>
     </table>
-</body>
-    
-    <!-- Скрипт для снега и гирлянды -->
-    <div class="garland">
-      <div class="bulb"></div>
-      <div class="bulb"></div>
-      <div class="bulb"></div>
-      <div class="bulb"></div>
-      <div class="bulb"></div>
-    </div>
+  </div>
 
-    <div class="snowflakes">
-      <div class="snowflake"></div>
-      <div class="snowflake"></div>
-      <div class="snowflake"></div>
-      <div class="snowflake"></div>
-      <div class="snowflake"></div>
-      <div class="snowflake"></div>
-      <div class="snowflake"></div>
-      <div class="snowflake"></div>
-      <div class="snowflake"></div>
-      <div class="snowflake"></div>
-    </div>
-    
-  </div> <!-- Конец div.content -->
+  <!-- Декорации (снег и гирлянда) -->
+  <div class="garland">
+    <div class="bulb"></div><div class="bulb"></div>
+    <div class="bulb"></div><div class="bulb"></div>
+    <div class="bulb"></div>
+  </div>
+  <div class="snowflakes">
+    <div class="snowflake"></div><div class="snowflake"></div>
+    <div class="snowflake"></div><div class="snowflake"></div>
+    <div class="snowflake"></div><div class="snowflake"></div>
+    <div class="snowflake"></div><div class="snowflake"></div>
+    <div class="snowflake"></div><div class="snowflake"></div>
+  </div>
 
 </body>
-</html>
 </html>
